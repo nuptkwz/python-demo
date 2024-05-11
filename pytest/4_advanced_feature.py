@@ -48,3 +48,19 @@ print("instanceResult:", instanceResult)
 for x, y in [(1, 1), (2, 4), (3, 9)]:
     print(x, y)
 
+# 列表生成式即List Comprehensions，是Python内置的非常简单却强大的可以用来创建list的生成式。
+print("---------列表生成式------------")
+print(list(range(1, 11)))
+
+d = {'x': 'A', 'y': 'B', 'z': 'C'}
+for k, v in d.items():
+    print(k, "=", v)
+
+g = (x * x for x in range(10))
+for n in g:
+    print(n)
+
+print("---------迭代器------------")
+iterable_temp = isinstance((x for x in range(10)), Iterable)
+print(iterable_temp)
+
