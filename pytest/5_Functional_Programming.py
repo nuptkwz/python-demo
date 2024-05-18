@@ -57,3 +57,31 @@ def str2int(s):
         return DIGITS[s]
 
     return reduce(fn, map(char2num, s))
+
+
+# filter函数用于过滤
+## 例如过滤出奇数
+def is_odd(x):
+    return x % 2 == 1
+
+
+filter_res = filter(is_odd, [1, 2, 4, 5, 6, 9, 10, 15])
+print(list(filter_res))
+
+## sorted排序算法
+sorted_list = sorted([1, 2, -1, -3, 4])
+print(sorted_list)
+print(list(sorted_list))
+
+## 字符串排序的例子
+sorted_result = sorted(['bob', 'about', 'Zoo', 'Credit'])
+## ['Credit', 'Zoo', 'about', 'bob']
+print("sorted_result:", sorted_result)
+
+sorted_result2 = sorted(['bob', 'about', 'Zoo', 'Credit'], key=str.lower)
+## ['about', 'bob', 'Credit', 'Zoo']
+print("sorted_result2:" , sorted_result2)
+
+sorted_result3 = sorted(['bob', 'about', 'Zoo', 'Credit'], key=str.lower, reverse=True)
+## ['Zoo', 'Credit', 'bob', 'about']
+print("sorted_result3:", sorted_result3)
