@@ -80,8 +80,30 @@ print("sorted_result:", sorted_result)
 
 sorted_result2 = sorted(['bob', 'about', 'Zoo', 'Credit'], key=str.lower)
 ## ['about', 'bob', 'Credit', 'Zoo']
-print("sorted_result2:" , sorted_result2)
+print("sorted_result2:", sorted_result2)
 
 sorted_result3 = sorted(['bob', 'about', 'Zoo', 'Credit'], key=str.lower, reverse=True)
 ## ['Zoo', 'Credit', 'bob', 'about']
 print("sorted_result3:", sorted_result3)
+
+# 匿名函数
+anonymous_func = map(lambda x: x * x, [1, 2, 3, 4, 5])
+## [1, 4, 9, 16, 25]
+print(list(anonymous_func))
+
+
+# lambda x: x * x 实际上就是：
+def f(x):
+    return x * x
+
+
+## 利用变量来调用该函数
+f1 = lambda x: x * x
+print(f1(5))
+
+
+## 利用变量来调用该函数
+def build(x, y):
+    return x * x + y * y
+
+print(build(5, 5))
