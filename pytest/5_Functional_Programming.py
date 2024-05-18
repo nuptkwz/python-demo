@@ -106,4 +106,30 @@ print(f1(5))
 def build(x, y):
     return x * x + y * y
 
+
 print(build(5, 5))
+
+
+## 函数也是一个对象，而且函数对象可以被赋值给变量，所以，通过变量也能调用该函数
+def now():
+    print('2024-05-18')
+
+
+f = now
+
+print(f())
+print(now.__name__)
+print(f.__name__)
+
+
+# python装饰器
+def log(func):
+    def wrapper(*args, **kw):
+        print('call %s():' % func.__name__)
+        return func(*args,**kw)
+    return wrapper
+
+@log
+def now():
+    print('2015-03-25')
+
