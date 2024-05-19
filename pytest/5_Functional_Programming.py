@@ -1,5 +1,7 @@
 # 高阶函数
 ## map/reduce
+import functools
+
 
 def f(x):
     return x * x
@@ -126,10 +128,38 @@ print(f.__name__)
 def log(func):
     def wrapper(*args, **kw):
         print('call %s():' % func.__name__)
-        return func(*args,**kw)
+        return func(*args, **kw)
+
     return wrapper
+
 
 @log
 def now():
     print('2015-03-25')
 
+
+now()
+
+print("log(now())")
+log(now())
+
+## 偏函数,Python的functools模块提供了很多有用的功能
+int_value = int("12345")
+print("int(\"12345\"):", int_value)
+
+## 就可以做N进制的转换：
+int_value_base_8 = int('12345', base=8)
+print(int_value_base_8)
+
+
+def int2(x, base=2):
+    return int(x, base)
+
+
+int_value_base_2 = int2('10000')
+print(int_value_base_2)
+
+## functools中的偏函数
+int_2 = functools.partial(int, base=2)
+func_tools_func = int_2('10000')
+print(func_tools_func)
