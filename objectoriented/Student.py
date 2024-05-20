@@ -17,6 +17,12 @@ class Student(object):
         else:
             return 'C'
 
+    def get_name(self):
+        return self.__name
+
+    def get_score(self):
+        return self.score
+
 
 bar = Student('Bar', 59)
 bar.print_score()
