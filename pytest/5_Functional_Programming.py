@@ -163,3 +163,6 @@ print(int_value_base_2)
 int_2 = functools.partial(int, base=2)
 func_tools_func = int_2('10000')
 print(func_tools_func)
+
+def __hello__(name):
+    return "hello:"+name
