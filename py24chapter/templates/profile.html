@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h1>{{ name }}的技能清单</h1>
+  <ul>
+    {% for skill in skills %}  <!-- Jinja2循环 -->
+    <li>{{ skill }}</li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
